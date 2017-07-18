@@ -1,6 +1,7 @@
 package shm.com.br.medtask;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,19 @@ import android.widget.ImageView;
 public class ImageAdapter extends BaseAdapter{
 
     private Context mContext;
-    private final int[] Imageid;
 
-    public ImageAdapter(Context c,int[] Imageid ) {
+    private final int[] Imageid;
+    private final Bitmap[] ImageBitmap;
+
+    public ImageAdapter(Context c, int[] Imageid, Bitmap[] imageBitmap) {
         mContext = c;
         this.Imageid = Imageid;
+        this.ImageBitmap = imageBitmap;
     }
 
     @Override
     public int getCount() {
-        return Imageid.length;
+        return 0;
     }
 
     @Override
@@ -40,7 +44,12 @@ public class ImageAdapter extends BaseAdapter{
             grid = new View(mContext);
             grid = inflater.inflate(R.layout.grid_item, null);
             ImageView imageView = (ImageView)grid.findViewById(R.id.gridItem);
-            imageView.setImageResource(Imageid[i]);
+
+            if(Imageid != null){
+                imageView.setImageResource(Imageid[i]);
+            } else if(ImageBitmap != null){
+                imageView.setImageBitmap(ImageBitmap[i]);
+            }
         } else {
             grid = (View) view;
         }
