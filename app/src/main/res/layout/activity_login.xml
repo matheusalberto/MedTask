@@ -9,13 +9,14 @@
 
     <LinearLayout
         android:orientation="vertical"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="280dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/logo"/>
     </LinearLayout>
@@ -24,6 +25,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:layout_gravity="center">
 
         <TextView
@@ -46,12 +48,18 @@
             android:id="@+id/EditTextSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:inputType="textPassword" />
 
         <Button
             android:id="@+id/ButtonLogar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:layout_height="60dp"
             android:text="Logar"/>
 
     </LinearLayout>
