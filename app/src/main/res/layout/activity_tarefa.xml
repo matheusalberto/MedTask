@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TarefaHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Atividade 1: Queimadura 2º grau."
+                android:textSize="25dp"/>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="Descrição: O paciente chegou ao hospital com queimaduras no braço, devido ao derramamento de óleo sobre a pele. O paciente, antes de vir ao hospital, jogou água em cima do braço, e o braço ficou conforme as imagens a seguir. Qual seria a solução?"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="25dp"
+                android:text="Imagens"
+                android:textSize="25dp"/>
+
+            <GridView
+                android:id="@+id/GridViewImagens"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </GridView>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+</LinearLayout>
