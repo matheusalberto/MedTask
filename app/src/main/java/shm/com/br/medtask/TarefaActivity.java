@@ -1,5 +1,9 @@
 package shm.com.br.medtask;
 
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +23,13 @@ public class TarefaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tarefa);
 
         GridView GridViewImagens = (GridView)findViewById(R.id.GridViewImagens);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
+        myToolbar.setTitle("MedTask");
+        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setSubtitle("Tarefa");
+        myToolbar.setSubtitleTextColor(Color.WHITE);
+        setSupportActionBar(myToolbar);
         GridViewImagens.setAdapter(new ImageAdapter(this));
         GridViewImagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

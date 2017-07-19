@@ -1,11 +1,13 @@
 package shm.com.br.medtask;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -43,6 +45,13 @@ public class AssinaturaActivity extends AppCompatActivity  {
         });
 
         btn_salvar = (Button) findViewById(R.id.btn_salvar);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
+        myToolbar.setTitle("MedTask");
+        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setSubtitle("Assinatura");
+        myToolbar.setSubtitleTextColor(Color.WHITE);
+        setSupportActionBar(myToolbar);
 
     }
 

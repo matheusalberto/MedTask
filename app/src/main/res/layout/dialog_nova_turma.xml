@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minWidth="300dp"
-    android:minHeight="200dp">
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:text="Cadastro de turma"
+        android:textSize="20sp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimaryDark"/>
 
     <EditText
         android:id="@+id/edt_nome_turma"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="15dp"
         android:hint="Nome da turma"/>
 
     <EditText
         android:id="@+id/edt_ano_turma"
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:hint="Ano da turma"/>
 
     <Button
         android:id="@+id/btn_confirmar"
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
         android:backgroundTint="@color/colorPrimary"
         android:textColor="@android:color/white"
         android:layout_height="wrap_content"

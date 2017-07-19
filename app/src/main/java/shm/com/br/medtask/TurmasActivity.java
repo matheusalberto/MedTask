@@ -1,20 +1,28 @@
 package shm.com.br.medtask;
 
 import android.app.Dialog;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TurmasActivity extends AppCompatActivity {
-    private Dialog dialogAddTurma;
+    private AlertDialog dialogAddTurma;
     private Button botaoDialog;
     private EditText edtNomeTurma;
     private EditText edtAnoTurma;
@@ -51,6 +59,14 @@ public class TurmasActivity extends AppCompatActivity {
         listaAnos.add("5o Ano");
         listaAnos.add("5o Ano");
 
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
+        myToolbar.setTitle("MedTask");
+        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setSubtitle("Turmas cadastradas");
+        myToolbar.setSubtitleTextColor(Color.WHITE);
+        setSupportActionBar(myToolbar);
+
+
         final TurmasAdapter mAdapter = new TurmasAdapter(getBaseContext(), listNome, listaAnos);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,17 +77,20 @@ public class TurmasActivity extends AppCompatActivity {
             }
         });
 
-        dialogAddTurma = new Dialog(TurmasActivity.this);
-        dialogAddTurma.setContentView(R.layout.dialog_nova_turma);
-        dialogAddTurma.setTitle("Cadastro de turma");
-        edtAnoTurma = dialogAddTurma.findViewById(R.id.edt_ano_turma);
-        edtNomeTurma = dialogAddTurma.findViewById(R.id.edt_nome_turma);
-        botaoDialog = dialogAddTurma.findViewById(R.id.btn_confirmar);
+
+        View inflatedView = getLayoutInflater().inflate(R.layout.dialog_nova_turma, null);
+        dialogAddTurma = new AlertDialog.Builder(TurmasActivity.this)
+                .setView(inflatedView)
+                .create();
+        edtAnoTurma = inflatedView.findViewById(R.id.edt_ano_turma);
+        edtNomeTurma = inflatedView.findViewById(R.id.edt_nome_turma);
+        botaoDialog = inflatedView.findViewById(R.id.btn_confirmar);
         botaoDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mAdapter.addTurma(edtNomeTurma.toString(), edtAnoTurma.toString());
+                mAdapter.addTurma(edtNomeTurma.getText().toString(), edtAnoTurma.getText().toString());
                 mAdapter.notifyDataSetChanged();
+                dialogAddTurma.dismiss();
             }
         });
 
