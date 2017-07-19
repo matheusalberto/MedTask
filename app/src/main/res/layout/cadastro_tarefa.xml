@@ -19,14 +19,16 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="20dp"
+            android:layout_gravity="center">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cadastro de Tarefa"
+                android:text="Cadastro de Caso"
                 android:textSize="40dp"
                 android:gravity="center"/>
 
@@ -40,7 +42,8 @@
             <EditText
                 android:id="@+id/EditTextNome"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -52,33 +55,36 @@
             <EditText
                 android:id="@+id/EditTextDescricao"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Imagens:"
-                android:textSize="20dp"
-                android:layout_marginTop="20dp"/>
+                android:textSize="20dp"/>
 
             <GridView
                 android:id="@+id/GridViewImagens"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:columnWidth="0dp"
+                android:layout_height="200dp"
+                android:numColumns="auto_fit"
+                android:columnWidth="90dp"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
                 android:gravity="center"
-                android:numColumns="3"
-                android:stretchMode="columnWidth"
-                android:verticalSpacing="5dp"
-                android:focusable="true"
-                android:clickable="true">
+                android:stretchMode="columnWidth">
             </GridView>
 
             <Button
                 android:id="@+id/BtnAnexarFoto"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:layout_gravity="center"
+                android:layout_height="60dp"
                 android:text="Anexar Imagem"/>
 
         </LinearLayout>

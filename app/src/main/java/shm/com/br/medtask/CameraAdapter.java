@@ -1,33 +1,32 @@
 package shm.com.br.medtask;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter {
+import java.util.List;
+
+public class CameraAdapter extends BaseAdapter {
     private Context mContext;
 
-    // Keep all Images in array
-    public Integer[] mThumbIds = {
-            R.drawable.queimadura1, R.drawable.queimadura2,
-            R.drawable.queimadura3, R.drawable.queimadura4
-    };
+    private List<Bitmap> lista;
 
     // Constructor
-    public ImageAdapter(Context c){
-        mContext = c;
+    public CameraAdapter(Context c, List<Bitmap> lista){
+        mContext = c; this.lista = lista;
     }
 
     @Override
     public int getCount() {
-        return mThumbIds.length;
+        return lista.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return mThumbIds[position];
+        return lista.get(position);
     }
 
     @Override
@@ -38,7 +37,7 @@ public class ImageAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ImageView imageView = new ImageView(mContext);
-        imageView.setImageResource(mThumbIds[position]);
+        imageView.setImageBitmap(lista.get(position));
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         imageView.setLayoutParams(new GridView.LayoutParams(200, 150));
         return imageView;

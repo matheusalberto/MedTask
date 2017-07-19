@@ -19,8 +19,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".TarefaActivity" />
+        <activity android:name=".CadastroTarefaActivity" />
+        <activity android:name=".ListaCasosActivity" />
+        <activity android:name=".FullImageActivity" />
         <activity android:name=".AssinaturaActivity"/>
-        <activity android:name=".CadastroTarefaActivity"/>
         <activity android:name=".TurmasActivity"/>
     </application>
 
