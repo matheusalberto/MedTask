@@ -1,7 +1,9 @@
 package shm.com.br.medtask;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.widget.GridView;
 
 /**
@@ -25,6 +27,13 @@ public class TarefaActivity extends AppCompatActivity {
         ImageAdapter adapter = new ImageAdapter(TarefaActivity.this, imageId, null);
         GridView GridViewImagens = (GridView)findViewById(R.id.GridViewImagens);
         GridViewImagens.setAdapter(adapter);
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
+        myToolbar.setTitle("MedTask");
+        myToolbar.setTitleTextColor(Color.WHITE);
+        myToolbar.setSubtitle("Tarefa");
+        myToolbar.setSubtitleTextColor(Color.WHITE);
+        setSupportActionBar(myToolbar);
     }
 
 }
