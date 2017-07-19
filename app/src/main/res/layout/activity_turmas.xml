@@ -30,7 +30,4 @@
         android:verticalSpacing="10dp">
 
     </ListView>
-
-
-
 </RelativeLayout>

@@ -1,13 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_plus"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:fabSize="normal"
+        app:borderWidth="0dp"
+        android:layout_margin="10dp"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        app:rippleColor="@android:color/transparent"/>
 
     <ListView
-        android:id="@+id/list"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-    </ListView>
+        android:id="@+id/list_casos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp">
 
-</LinearLayout>
+    </ListView>
+</RelativeLayout>

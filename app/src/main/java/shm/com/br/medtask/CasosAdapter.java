@@ -29,21 +29,16 @@ import java.util.List;
  * Created by mateushideaki on 7/18/17.
  */
 
-public class TurmasAdapter extends ArrayAdapter<String> {
+public class CasosAdapter extends ArrayAdapter<String> {
     private Context context;
     private List<String> values;
-    private List<String> listAnos;
+    private List<String> descs;
 
-    public TurmasAdapter(Context c, List<String> v, List<String> a){
+    public CasosAdapter(Context c, List<String> v, List<String> a){
         super(c, -1, v);
         context = c;
         values = v;
-        listAnos = a;
-    }
-
-    public void addTurma(String nome, String ano){
-        values.add(nome);
-        listAnos.add(ano);
+        descs = a;
     }
 
     @Override
@@ -52,12 +47,12 @@ public class TurmasAdapter extends ArrayAdapter<String> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 
-        View rowView = inflater.inflate(R.layout.linha_turma, parent, false);
+        View rowView = inflater.inflate(R.layout.casos_item, parent, false);
         TextView textView1 = rowView.findViewById(R.id.firstLine);
         TextView textView2 =  rowView.findViewById(R.id.secondLine);
         ImageView imageView = rowView.findViewById(R.id.icon);
         textView1.setText(values.get(position));
-        textView2.setText(listAnos.get(position));
+        textView2.setText(descs.get(position));
         // change the icon for Windows and iPhone
         imageView.setImageResource(R.drawable.ic_turma);
 

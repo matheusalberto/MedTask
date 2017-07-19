@@ -10,6 +10,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
@@ -30,7 +31,7 @@ public class CadastroTarefaActivity extends AppCompatActivity{
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private List<Bitmap> ImageBitmap = new ArrayList<>();
     GridView GridViewImagens;
-    ImageAdapter adapter;
+    CameraAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,20 @@ public class CadastroTarefaActivity extends AppCompatActivity{
         EditText EditTextNome = (EditText)findViewById(R.id.EditTextNome);
         EditText EditTextDescricao = (EditText)findViewById(R.id.EditTextDescricao);
         GridViewImagens = (GridView)findViewById(R.id.GridViewImagens);
+
+        GridViewImagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+
+                // Sending image id to FullScreenActivity
+                Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
+                // passing array index
+                i.putExtra("id", position);
+                i.putExtra("tipo", "Bitmap");
+                i.putExtra("imagem", ImageBitmap.get(position));
+                startActivity(i);
+            }
+        });
 
         Button BtnAnexarFoto = (Button) findViewById(R.id.BtnAnexarFoto);
         BtnAnexarFoto.setOnClickListener(new View.OnClickListener() {
@@ -59,9 +74,8 @@ public class CadastroTarefaActivity extends AppCompatActivity{
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             ImageBitmap.add(imageBitmap);
-           // adapter = new ImageAdapter(CadastroTarefaActivity.this, null, ImageBitmap);
-            //GridViewImagens.setAdapter(adapter);
-            //GridViewImagens.invalidate();
+            adapter = new CameraAdapter(CadastroTarefaActivity.this, ImageBitmap);
+            GridViewImagens.setAdapter(adapter);
         }
     }
 

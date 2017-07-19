@@ -29,6 +29,7 @@ public class TarefaActivity extends AppCompatActivity {
                 Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
                 // passing array index
                 i.putExtra("id", position);
+                i.putExtra("tipo", "Drawable");
                 startActivity(i);
             }
         });

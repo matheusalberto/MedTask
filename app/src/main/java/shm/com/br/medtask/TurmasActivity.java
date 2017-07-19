@@ -1,7 +1,6 @@
 package shm.com.br.medtask;
 
 import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -10,14 +9,9 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by mateushideaki on 7/18/17.
- */
 
 public class TurmasActivity extends AppCompatActivity {
     private Dialog dialogAddTurma;
