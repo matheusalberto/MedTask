@@ -1,58 +1,47 @@
 package shm.com.br.medtask;
-
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.GridView;
 import android.widget.ImageView;
 
-public class ImageAdapter extends BaseAdapter{
-
+public class ImageAdapter extends BaseAdapter {
     private Context mContext;
 
-    private final int[] Imageid;
-    private final Bitmap[] ImageBitmap;
+    // Keep all Images in array
+    public Integer[] mThumbIds = {
+            R.drawable.queimadura1, R.drawable.queimadura2,
+            R.drawable.queimadura3, R.drawable.queimadura4
+    };
 
-    public ImageAdapter(Context c, int[] Imageid, Bitmap[] imageBitmap) {
+    // Constructor
+    public ImageAdapter(Context c){
         mContext = c;
-        this.Imageid = Imageid;
-        this.ImageBitmap = imageBitmap;
     }
 
     @Override
     public int getCount() {
+        return mThumbIds.length;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return mThumbIds[position];
+    }
+
+    @Override
+    public long getItemId(int position) {
         return 0;
     }
 
     @Override
-    public Object getItem(int i) {
-        return null;
+    public View getView(int position, View convertView, ViewGroup parent) {
+        ImageView imageView = new ImageView(mContext);
+        imageView.setImageResource(mThumbIds[position]);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        imageView.setLayoutParams(new GridView.LayoutParams(200, 150));
+        return imageView;
     }
 
-    @Override
-    public long getItemId(int i) {
-        return 0;
-    }
-
-    @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        View grid;
-        LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (view == null) {
-            grid = new View(mContext);
-            grid = inflater.inflate(R.layout.grid_item, null);
-            ImageView imageView = (ImageView)grid.findViewById(R.id.gridItem);
-
-            if(Imageid != null){
-                imageView.setImageResource(Imageid[i]);
-            } else if(ImageBitmap != null){
-                imageView.setImageBitmap(ImageBitmap[i]);
-            }
-        } else {
-            grid = (View) view;
-        }
-        return grid;
-    }
 }

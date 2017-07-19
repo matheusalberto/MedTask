@@ -30,7 +30,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:paddingTop="25dp"
                 android:text="Imagens"
@@ -38,16 +38,14 @@
 
             <GridView
                 android:id="@+id/GridViewImagens"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:columnWidth="0dp"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:numColumns="auto_fit"
+                android:columnWidth="90dp"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
                 android:gravity="center"
-                android:numColumns="3"
-                android:stretchMode="columnWidth"
-                android:verticalSpacing="5dp"
-                android:focusable="true"
-                android:clickable="true">
+                android:stretchMode="columnWidth">
             </GridView>
 
             <TextView

@@ -21,6 +21,8 @@
         </activity>
         <activity android:name=".TarefaActivity" />
         <activity android:name=".CadastroTarefaActivity" />
+        <activity android:name=".ListaCasosActivity" />
+        <activity android:name=".FullImageActivity" />
     </application>
 
 </manifest>

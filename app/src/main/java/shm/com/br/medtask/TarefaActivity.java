@@ -1,7 +1,10 @@
 package shm.com.br.medtask;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 /**
@@ -10,21 +13,25 @@ import android.widget.GridView;
 
 public class TarefaActivity extends AppCompatActivity {
 
-    int[] imageId = {
-            R.drawable.queimadura1,
-            R.drawable.queimadura2,
-            R.drawable.queimadura3,
-            R.drawable.queimadura4
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tarefa);
 
-        ImageAdapter adapter = new ImageAdapter(TarefaActivity.this, imageId, null);
         GridView GridViewImagens = (GridView)findViewById(R.id.GridViewImagens);
-        GridViewImagens.setAdapter(adapter);
+        GridViewImagens.setAdapter(new ImageAdapter(this));
+        GridViewImagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v,
+                                    int position, long id) {
+
+                // Sending image id to FullScreenActivity
+                Intent i = new Intent(getApplicationContext(), FullImageActivity.class);
+                // passing array index
+                i.putExtra("id", position);
+                startActivity(i);
+            }
+        });
     }
 
 }

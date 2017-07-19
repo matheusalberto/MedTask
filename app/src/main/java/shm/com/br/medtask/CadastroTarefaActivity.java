@@ -13,10 +13,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Matheus Alberto on 17/07/2017.
@@ -25,8 +28,9 @@ import java.text.SimpleDateFormat;
 public class CadastroTarefaActivity extends AppCompatActivity{
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
-    private Bitmap[] ImageBitmap = new Bitmap[100]; int idx = 0;
-    GridView GridViewImagens; ImageAdapter adapter;
+    private List<Bitmap> ImageBitmap = new ArrayList<>();
+    GridView GridViewImagens;
+    ImageAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +45,24 @@ public class CadastroTarefaActivity extends AppCompatActivity{
         BtnAnexarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                File picsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
-                File imageFile = new File(picsDir, "foto.jpg");
                 Intent i = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                i.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(imageFile));
-                startActivity(i);
+                if(i.resolveActivity(getPackageManager()) != null){
+                    startActivityForResult(i, REQUEST_IMAGE_CAPTURE);
+                }
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            ImageBitmap.add(imageBitmap);
+           // adapter = new ImageAdapter(CadastroTarefaActivity.this, null, ImageBitmap);
+            //GridViewImagens.setAdapter(adapter);
+            //GridViewImagens.invalidate();
+        }
+    }
+
 }
