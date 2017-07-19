@@ -31,7 +31,7 @@ public class CadastroCasoActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cadastro_tarefa);
+        setContentView(R.layout.cadastro_caso);
 
         EditText EditTextNome = (EditText)findViewById(R.id.EditTextNome);
         EditText EditTextDescricao = (EditText)findViewById(R.id.EditTextDescricao);
@@ -57,6 +57,16 @@ public class CadastroCasoActivity extends AppCompatActivity{
             }
         });
 
+        Button btnAssinatura = (Button) findViewById(R.id.btn_coletar_assinatura);
+        btnAssinatura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CadastroCasoActivity.this, AssinaturaActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
         Button BtnAnexarFoto = (Button) findViewById(R.id.BtnAnexarFoto);
         BtnAnexarFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +81,7 @@ public class CadastroCasoActivity extends AppCompatActivity{
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
         myToolbar.setTitle("MedTask");
         myToolbar.setTitleTextColor(Color.WHITE);
-        myToolbar.setSubtitle("Cadastro de tarefa");
+        myToolbar.setSubtitle("Cadastro de caso");
         myToolbar.setSubtitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
     }

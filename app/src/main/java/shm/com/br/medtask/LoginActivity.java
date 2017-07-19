@@ -35,12 +35,15 @@ public class LoginActivity extends AppCompatActivity {
                 switch (login){
                     case "Professor":
                         intent = new Intent(LoginActivity.this, TurmasActivity.class);
+                        intent.putExtra("TipoConta", "Professor");
                         break;
                     case "Aluno":
-                        intent = new Intent(LoginActivity.this, TarefaActivity.class);
+                        intent = new Intent(LoginActivity.this, CasoActivity.class);
+                        intent.putExtra("TipoConta", "Aluno");
                         break;
                     case "Medico":
-                        intent = new Intent(LoginActivity.this, CadastroCasoActivity.class);
+                        intent = new Intent(LoginActivity.this, ListaCasosActivity.class);
+                        intent.putExtra("TipoConta", "Medico");
                         break;
                 }
                 startActivity(intent);

@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class CasosActivity extends AppCompatActivity {
+public class ListaCasosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,22 +34,32 @@ public class CasosActivity extends AppCompatActivity {
             listDescs.add(DescCasos[i]);
         }
 
+        final String tipoConta = getIntent().getStringExtra("TipoConta");
+
         ListView mListView = (ListView) findViewById(R.id.list_casos);
         final CasosAdapter mAdapter = new CasosAdapter(getBaseContext(), listIds, listDescs);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Intent intent = new Intent(CasosActivity.this, TarefaActivity.class);
-                //startActivity(intent);
+                if(tipoConta.equalsIgnoreCase("Professor"))
+                {
+                    Intent intent = new Intent(ListaCasosActivity.this, CadastroCasoActivity.class);
+                    startActivity(intent);
+                    return;
+                }
+                Intent intent = new Intent(ListaCasosActivity.this, CasoActivity.class);
+                startActivity(intent);
             }
         });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        if(tipoConta.equals("Aluno"))
+            fab.setVisibility(View.GONE);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(CasosActivity.this, CadastroCasoActivity.class);
+                Intent intent = new Intent(ListaCasosActivity.this, CadastroCasoActivity.class);
                 startActivity(intent);
             }
         });

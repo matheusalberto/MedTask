@@ -29,7 +29,7 @@
             <EditText
                 android:id="@+id/EditTextNome"
                 android:layout_width="match_parent"
-                android:hint="Nome da tarefa"
+                android:hint="Nome da caso"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"/>
 
@@ -37,7 +37,7 @@
                 android:id="@+id/EditTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descrição da tarefa"
+                android:hint="Descrição da caso"
                 android:layout_marginBottom="20dp"/>
 
             <TextView
@@ -68,7 +68,64 @@
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_foto"
                 android:paddingLeft="20dp"
-                android:text="Anexar Imagem"/>
+                android:text="Adicionar Fotos"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Vídeos:"
+                android:textSize="20sp"/>
+
+            <GridView
+                android:id="@+id/gridVideos"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:numColumns="auto_fit"
+                android:columnWidth="90dp"
+                android:horizontalSpacing="10dp"
+                android:verticalSpacing="10dp"
+                android:gravity="center"
+                android:stretchMode="columnWidth">
+            </GridView>
+
+            <Button
+                android:id="@+id/btn_anexar_video"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_foto"
+                android:paddingLeft="20dp"
+                android:text="Adicionar Vídeos"/>
+
+            <Button
+                android:id="@+id/btn_coletar_assinatura"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_foto"
+                android:paddingLeft="20dp"
+                android:text="Coletar Assinatura"/>
+
+            <Button
+                android:id="@+id/btn_salvar_caso"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/colorPrimary"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_foto"
+                android:paddingLeft="20dp"
+                android:text="Salvar caso"/>
 
         </LinearLayout>
 

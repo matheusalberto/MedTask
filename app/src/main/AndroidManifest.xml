@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TarefaActivity" />
+        <activity android:name=".CasoActivity" />
         <activity android:name=".CadastroCasoActivity" />
-        <activity android:name=".CasosActivity" />
+        <activity android:name=".ListaCasosActivity" />
         <activity android:name=".FullImageActivity" />
         <activity android:name=".AssinaturaActivity"/>
         <activity android:name=".TurmasActivity"/>

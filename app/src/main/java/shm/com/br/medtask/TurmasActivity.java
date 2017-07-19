@@ -1,7 +1,5 @@
 package shm.com.br.medtask;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -12,10 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -30,7 +25,7 @@ public class TurmasActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_turmas);
+        setContentView(R.layout.lista_turmas);
 
         ListView mListView = (ListView) findViewById(R.id.list_turmas);
 
