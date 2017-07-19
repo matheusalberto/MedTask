@@ -23,7 +23,6 @@ public class TarefaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tarefa);
 
         GridView GridViewImagens = (GridView)findViewById(R.id.GridViewImagens);
-        GridViewImagens.setAdapter(adapter);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
         myToolbar.setTitle("MedTask");
@@ -31,7 +30,6 @@ public class TarefaActivity extends AppCompatActivity {
         myToolbar.setSubtitle("Tarefa");
         myToolbar.setSubtitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
-
         GridViewImagens.setAdapter(new ImageAdapter(this));
         GridViewImagens.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
