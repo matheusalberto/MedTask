@@ -25,37 +25,26 @@
             android:layout_margin="20dp"
             android:layout_gravity="center">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nome:"
-                android:textSize="20dp"
-                android:layout_marginTop="20dp"/>
 
             <EditText
                 android:id="@+id/EditTextNome"
                 android:layout_width="match_parent"
+                android:hint="Nome da tarefa"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Descrição:"
-                android:textSize="20dp"
-                android:layout_marginTop="20dp"/>
 
             <EditText
                 android:id="@+id/EditTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="Descrição da tarefa"
                 android:layout_marginBottom="20dp"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Imagens:"
-                android:textSize="20dp"/>
+                android:textSize="20sp"/>
 
             <GridView
                 android:id="@+id/GridViewImagens"
@@ -75,9 +64,10 @@
                 android:backgroundTint="@color/colorPrimary"
                 android:gravity="center"
                 android:textColor="@android:color/white"
-                android:textSize="20sp"
                 android:layout_gravity="center"
-                android:layout_height="60dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_foto"
+                android:paddingLeft="20dp"
                 android:text="Anexar Imagem"/>
 
         </LinearLayout>

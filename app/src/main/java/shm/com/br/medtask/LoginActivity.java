@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        EditText EditTextLogin = (EditText)findViewById(R.id.EditTextLogin);
+        final EditText EditTextLogin = (EditText)findViewById(R.id.EditTextLogin);
         EditText EditTextSenha = (EditText)findViewById(R.id.EditTextLogin);
         Button ButtonLogar = (Button)findViewById(R.id.ButtonLogar);
 
@@ -30,7 +30,20 @@ public class LoginActivity extends AppCompatActivity {
         ButtonLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String login = EditTextLogin.getText().toString();
                 Intent intent = new Intent(LoginActivity.this, TurmasActivity.class);
+                switch (login){
+                    case "Professor":
+                        intent = new Intent(LoginActivity.this, TurmasActivity.class);
+                        break;
+                    case "Aluno":
+                        intent = new Intent(LoginActivity.this, TarefaActivity.class);
+                        break;
+                    case "Medico":
+                        intent = new Intent(LoginActivity.this, CadastroTarefaActivity.class);
+                        break;
+                }
+
                 startActivity(intent);
             }
         });
