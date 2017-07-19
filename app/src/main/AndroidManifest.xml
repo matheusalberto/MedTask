@@ -15,7 +15,6 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -23,6 +22,8 @@
         <activity android:name=".CadastroTarefaActivity" />
         <activity android:name=".ListaCasosActivity" />
         <activity android:name=".FullImageActivity" />
+        <activity android:name=".AssinaturaActivity"/>
+        <activity android:name=".TurmasActivity"/>
     </application>
 
 </manifest>
