@@ -1,12 +1,8 @@
 package shm.com.br.medtask;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -14,11 +10,8 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +19,7 @@ import java.util.List;
  * Created by Matheus Alberto on 17/07/2017.
  */
 
-public class CadastroTarefaActivity extends AppCompatActivity{
+public class CadastroCasoActivity extends AppCompatActivity{
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     private List<Bitmap> ImageBitmap = new ArrayList<>();
@@ -51,7 +44,13 @@ public class CadastroTarefaActivity extends AppCompatActivity{
                 // passing array index
                 i.putExtra("id", position);
                 i.putExtra("tipo", "Bitmap");
-                i.putExtra("imagem", ImageBitmap.get(position));
+
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                ImageBitmap.get(position).compress(Bitmap.CompressFormat.PNG, 100, stream);
+                byte[] byteArray = stream.toByteArray();
+
+                i.putExtra("imagem",ImageBitmap.get(position));
+
                 startActivity(i);
             }
         });
@@ -74,7 +73,7 @@ public class CadastroTarefaActivity extends AppCompatActivity{
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             ImageBitmap.add(imageBitmap);
-            adapter = new CameraAdapter(CadastroTarefaActivity.this, ImageBitmap);
+            adapter = new CameraAdapter(CadastroCasoActivity.this, ImageBitmap);
             GridViewImagens.setAdapter(adapter);
         }
     }

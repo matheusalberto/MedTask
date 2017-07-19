@@ -6,13 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class ListaCasosActivity extends AppCompatActivity {
+public class CasosActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +40,8 @@ public class ListaCasosActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ListaCasosActivity.this, TarefaActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(CasosActivity.this, TarefaActivity.class);
+                //startActivity(intent);
             }
         });
 
@@ -51,7 +49,7 @@ public class ListaCasosActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ListaCasosActivity.this, CadastroTarefaActivity.class);
+                Intent intent = new Intent(CasosActivity.this, CadastroCasoActivity.class);
                 startActivity(intent);
             }
         });
