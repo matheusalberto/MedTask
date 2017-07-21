@@ -45,6 +45,12 @@ public class AssinaturaActivity extends AppCompatActivity  {
         });
 
         btn_salvar = (Button) findViewById(R.id.btn_salvar);
+        btn_salvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar_turmas);
         myToolbar.setTitle("MedTask");

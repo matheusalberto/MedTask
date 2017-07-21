@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,13 +39,16 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("TipoConta", "Professor");
                         break;
                     case "Aluno":
-                        intent = new Intent(LoginActivity.this, CasoActivity.class);
+                        intent = new Intent(LoginActivity.this, ListaCasosActivity.class);
                         intent.putExtra("TipoConta", "Aluno");
                         break;
                     case "Medico":
                         intent = new Intent(LoginActivity.this, ListaCasosActivity.class);
                         intent.putExtra("TipoConta", "Medico");
                         break;
+                    default:
+                        Toast.makeText(getBaseContext(),"Login ou senha incorretos.", Toast.LENGTH_SHORT).show();
+                        return;
                 }
                 startActivity(intent);
             }

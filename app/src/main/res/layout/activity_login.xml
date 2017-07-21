@@ -31,27 +31,28 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_margin="20dp"
-        android:layout_gravity="center">
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Login:"/>
+            android:text="Login:" />
 
         <EditText
             android:id="@+id/EditTextLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"/>
+            android:layout_marginBottom="20dp"
+            android:inputType="text" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Senha:"/>
+            android:text="Senha:" />
 
         <EditText
             android:id="@+id/EditTextSenha"
@@ -63,13 +64,13 @@
         <Button
             android:id="@+id/ButtonLogar"
             android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
             android:backgroundTint="@color/colorPrimary"
             android:gravity="center"
+            android:text="Logar"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:layout_gravity="center"
-            android:layout_height="60dp"
-            android:text="Logar"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 

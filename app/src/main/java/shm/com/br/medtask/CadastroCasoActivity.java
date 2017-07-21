@@ -84,6 +84,14 @@ public class CadastroCasoActivity extends AppCompatActivity{
         myToolbar.setSubtitle("Cadastro de caso");
         myToolbar.setSubtitleTextColor(Color.WHITE);
         setSupportActionBar(myToolbar);
+
+        Button enviar_caso = (Button) findViewById(R.id.btn_salvar_caso);
+        enviar_caso.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override

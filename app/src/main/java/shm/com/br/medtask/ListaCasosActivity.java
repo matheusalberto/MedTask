@@ -51,7 +51,7 @@ public class ListaCasosActivity extends AppCompatActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(tipoConta.equalsIgnoreCase("Professor"))
+                if(tipoConta.equalsIgnoreCase("Medico"))
                 {
                     Intent intent = new Intent(ListaCasosActivity.this, CadastroCasoActivity.class);
                     startActivity(intent);
