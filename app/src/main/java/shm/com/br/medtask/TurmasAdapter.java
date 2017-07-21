@@ -7,6 +7,7 @@ import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
 import android.database.DataSetObserver;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.Gravity;
@@ -33,12 +34,14 @@ public class TurmasAdapter extends ArrayAdapter<String> {
     private Context context;
     private List<String> values;
     private List<String> listAnos;
+    private int resourceId;
 
-    public TurmasAdapter(Context c, List<String> v, List<String> a){
+    public TurmasAdapter(Context c, List<String> v, List<String> a, int res){
         super(c, -1, v);
         context = c;
         values = v;
         listAnos = a;
+        resourceId = res;
     }
 
     public void addTurma(String nome, String ano){
@@ -59,8 +62,7 @@ public class TurmasAdapter extends ArrayAdapter<String> {
         textView1.setText(values.get(position));
         textView2.setText(listAnos.get(position));
         // change the icon for Windows and iPhone
-        imageView.setImageResource(R.drawable.ic_turma);
-
+        imageView.setImageResource(resourceId);
         return rowView;
     }
 
