@@ -54,7 +54,6 @@ public class CasosAdapter extends ArrayAdapter<String> {
         textView1.setText(values.get(position));
         textView2.setText(descs.get(position));
         // change the icon for Windows and iPhone
-        imageView.setImageResource(R.drawable.ic_turma);
 
         return rowView;
     }
