@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 
 /**
@@ -40,6 +41,14 @@ public class CasoActivity extends AppCompatActivity {
                 i.putExtra("id", position);
                 i.putExtra("tipo", "Drawable");
                 startActivity(i);
+            }
+        });
+
+        Button enviar = (Button) findViewById(R.id.btn_enviar_resp);
+        enviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

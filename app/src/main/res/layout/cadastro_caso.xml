@@ -29,14 +29,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:hint="Nome da caso" />
+                android:hint="Título" />
 
             <EditText
                 android:id="@+id/EditTextDescricao"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:hint="Descrição da caso" />
+                android:hint="Descrição" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -119,8 +119,8 @@
                 android:background="@color/colorPrimary"
                 android:gravity="center"
                 android:paddingLeft="20dp"
+                android:paddingRight="20dp"
                 android:text="Concordo com os termos de compromisso e privacidade"
-                android:drawableLeft="@drawable/ic_assinatura"
                 android:textColor="@android:color/white" />
 
             <Button
