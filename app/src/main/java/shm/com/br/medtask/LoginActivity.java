@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String login = EditTextLogin.getText().toString();
-                Intent intent = new Intent(LoginActivity.this, TurmasActivity.class);
+                Intent intent = new Intent(LoginActivity.this, TurmaActivity.class);
                 switch (login){
                     case "Professor":
                         intent = new Intent(LoginActivity.this, TurmasActivity.class);

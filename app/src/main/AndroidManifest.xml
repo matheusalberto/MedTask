@@ -24,6 +24,7 @@
         <activity android:name=".FullImageActivity" />
         <activity android:name=".AssinaturaActivity"/>
         <activity android:name=".TurmasActivity"/>
+        <activity android:name=".TurmaActivity"/>
     </application>
 
 </manifest>
