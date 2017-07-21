@@ -23,7 +23,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:orientation="vertical">
+<<<<<<< HEAD
+=======
 
+>>>>>>> 49f811b3fee1f252b11363e83733b589a4062faf
 
             <EditText
                 android:id="@+id/EditTextNome"
@@ -48,7 +51,11 @@
             <GridView
                 android:id="@+id/GridViewImagens"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
+                android:layout_height="wrap_content"
+=======
                 android:layout_height="200dp"
+>>>>>>> 49f811b3fee1f252b11363e83733b589a4062faf
                 android:columnWidth="90dp"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
@@ -78,7 +85,11 @@
             <GridView
                 android:id="@+id/gridVideos"
                 android:layout_width="match_parent"
+<<<<<<< HEAD
+                android:layout_height="wrap_content"
+=======
                 android:layout_height="200dp"
+>>>>>>> 49f811b3fee1f252b11363e83733b589a4062faf
                 android:columnWidth="90dp"
                 android:gravity="center"
                 android:horizontalSpacing="10dp"
@@ -105,10 +116,29 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/colorPrimary"
+<<<<<<< HEAD
+                android:drawableLeft="@drawable/ic_foto"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="Coletar Assinatura"
+                android:textColor="@android:color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_termos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:paddingLeft="20dp"
+                android:text="Concordo com os termos de compromisso e privacidade"
+=======
                 android:drawableLeft="@drawable/ic_assinatura"
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:text="Coletar Assinatura"
+>>>>>>> 49f811b3fee1f252b11363e83733b589a4062faf
                 android:textColor="@android:color/white" />
 
             <Button
@@ -117,12 +147,20 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+<<<<<<< HEAD
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:drawableLeft="@drawable/ic_foto"
+                android:gravity="center"
+                android:text="Salvar caso"
+=======
                 android:backgroundTint="@color/colorPrimary"
                 android:drawableLeft="@drawable/ic_enviar_caso"
                 android:gravity="center"
                 android:paddingLeft="20dp"
                 android:text="Enviar caso"
                 android:layout_marginBottom="20dp"
+>>>>>>> 49f811b3fee1f252b11363e83733b589a4062faf
                 android:textColor="@android:color/white" />
 
         </LinearLayout>
